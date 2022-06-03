@@ -25,7 +25,7 @@ export const EntriesList: FC<Props> = ({ status }) => {
     const entry = entries.find((entry) => entry._id === id)!;
     entry.status = status;
     updateEntry(entry);
-    setDraggingEnd();
+    setDraggingEnd(true);
   };
 
   return (
@@ -36,7 +36,7 @@ export const EntriesList: FC<Props> = ({ status }) => {
     >
       <Paper
         sx={{
-          height: "calc(100vh - 250px)",
+          height: "calc(100vh - 180px)",
           overflow: "scroll",
           backgroundColor: "transparent",
           padding: "3px 5px",

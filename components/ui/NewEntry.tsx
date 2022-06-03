@@ -7,11 +7,11 @@ import { EntriesContext } from "../context/entries";
 import { UIContext } from "../context/ui";
 
 export const NewEntry: FC = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [touched, setTouched] = useState(false);
-
   const { addNewEntry } = useContext(EntriesContext);
   const { adding, setIsAddingEntry } = useContext(UIContext);
+
+  const [inputValue, setInputValue] = useState("");
+  const [touched, setTouched] = useState(false);
 
   const onTextChanged = (e: ChangeEvent<HTMLInputElement>) =>
     setInputValue(e.target.value);
@@ -20,6 +20,7 @@ export const NewEntry: FC = () => {
     if (inputValue.length === 0) return;
     addNewEntry(inputValue);
     setTouched(false);
+    setIsAddingEntry(false)
     setInputValue("");
   };
 
@@ -42,7 +43,7 @@ export const NewEntry: FC = () => {
           <Box
             display="flex"
             justifyContent="space-between"
-            sx={{ margin: "1vh" }}
+            sx={{ margin: "0.5vh" }}
           >
             <Button
               variant="outlined"
@@ -64,7 +65,7 @@ export const NewEntry: FC = () => {
         </>
       ) : (
         <Button
-          sx={{ padding: "1.5vh", margin: "0.5vh" }}
+          sx={{ padding: "1vh", margin: "0.3vh" }}
           fullWidth
           variant="outlined"
           color="success"

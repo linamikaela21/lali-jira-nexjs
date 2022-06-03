@@ -6,9 +6,9 @@ import { EntriesList, NewEntry } from "../components/ui";
 const HomePage: NextPage = () => {
   return (
     <Layout title="Home - Jira">
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
-          <Card sx={{ height: "calc(100vh - 110px)" }}>
+          <Card sx={{ height: "calc(90vh)", paddingY: 2 }}>
             <CardHeader title="Pending"></CardHeader>
           <NewEntry />
             <CardContent>
@@ -17,15 +17,15 @@ const HomePage: NextPage = () => {
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card sx={{ height: "calc(100vh - 110px)" }}>
+          <Card sx={{ height: "calc(90vh)" }}>
             <CardHeader title="In Process"></CardHeader>
             <CardContent>
-              <EntriesList status="in-progress" />
+              <EntriesList status="in-process" />
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card sx={{ height: "calc(100vh - 110px)" }}>
+          <Card sx={{ height: "calc(90vh)" }}>
             <CardHeader title="Completed"></CardHeader>
             <CardContent>
               <EntriesList status="completed" />

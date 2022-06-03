@@ -12,7 +12,7 @@ import {
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 export const NavBar = () => {
-  const { openSideMenu } = useContext( UIContext );
+  const { openSideMenu } = useContext(UIContext);
 
   return (
     <AppBar position="sticky">
@@ -34,11 +34,10 @@ export const NavBar = () => {
             </Typography>
           </Container>
         </Link>
-        <IconButton>
+        <IconButton onClick={openSideMenu}>
           <MenuRoundedIcon
             style={{ margin: "0px 10px" }}
             sx={{ fontSize: 40 }}
-            onClick={openSideMenu}
           />
         </IconButton>
       </Toolbar>

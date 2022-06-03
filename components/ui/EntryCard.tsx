@@ -18,14 +18,14 @@ export const EntryCard: FC<Props> = ({ entry }) => {
 
   const onDragStart = (e: DragEvent) => {
     e.dataTransfer?.setData("text", entry._id);
-    setDraggingStart();
+    setDraggingStart(true);
   };
 
-  const onDragEnd = () => setDraggingEnd();
+  const onDragEnd = () => setDraggingEnd(false);
 
   return (
     <Card
-      sx={{ marginButtom: 1 }}
+      sx={{ marginButtom: 0.5, width: "100%" }}
       draggable
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
