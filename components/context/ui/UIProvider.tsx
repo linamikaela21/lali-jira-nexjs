@@ -13,7 +13,7 @@ const UI_INITIAL_STATE: UIState = {
   dragging: false,
 };
 
-export const UIProvider: FC = ({ children }: any) => {
+const UIProvider: FC = ({ children }: any) => {
   const [state, dispatch] = useReducer(uiReducer, UI_INITIAL_STATE);
 
   const openSideMenu = () => {
@@ -47,3 +47,5 @@ export const UIProvider: FC = ({ children }: any) => {
     </UIContext.Provider>
   );
 };
+
+export default UIProvider;
