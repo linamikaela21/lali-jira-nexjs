@@ -24,7 +24,6 @@ export const connect = async() => {
             console.log('Using last connection');
             return;
         }
-
         await mongoose.disconnect();
     }
 
@@ -42,5 +41,5 @@ export const disconnect = async() => {
     await mongoose.disconnect();
     mongoConnection.isConnected = 0;
 
-    console.log('Desconectado de MongoDB');
+    console.log('MongoDB disconnected');
 }
