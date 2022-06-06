@@ -1,14 +1,13 @@
 import { Box } from "@mui/material";
 import Head from "next/head";
-import { FC, ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 import { NavBar, SideBar } from "../ui";
 
 interface Props {
   title?: string;
-  children?: ReactNode | undefined;
 }
 
-export const Layout: FC<Props> = ({ title = "Open Jira", children }) => {
+export const Layout: FC<PropsWithChildren<Props>> = ({ title = "Open Jira", children }) => {
   return (
     <Box sx={{ flexFlow: 1 }}>
       <Head>

@@ -9,8 +9,8 @@ import { darkTheme } from "../themes";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SnackbarProvider maxSnack={3}>
-      <EntriesProvider>
-        <UIProvider>
+      <EntriesProvider entries={[]}>
+        <UIProvider sidemenuOpen={false} adding={false} dragging={false}>
           <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <Component {...pageProps} />

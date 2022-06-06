@@ -1,4 +1,4 @@
-import { FC, useReducer, useEffect } from "react";
+import { FC, useReducer, useEffect, PropsWithChildren } from "react";
 import { useRouter } from "next/router";
 import { EntriesContext } from ".";
 import { entriesReducer } from ".";
@@ -14,7 +14,7 @@ const ENTRIES_INITIAL_STATE: EntriesState = {
   entries: [],
 };
 
-export const EntriesProvider: FC<EntriesState> = ({ children }: any) => {
+export const EntriesProvider: FC<PropsWithChildren<EntriesState>> = ({ children }) => {
   const router = useRouter()
   const [state, dispatch] = useReducer(entriesReducer, ENTRIES_INITIAL_STATE);
   const { enqueueSnackbar } = useSnackbar();
