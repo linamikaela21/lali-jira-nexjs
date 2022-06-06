@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { UIContext } from "../context/ui";
-import Link from "next/link";
+import NextLink from "next/link";
 import Image from "next/image";
 import {
   AppBar,
   Container,
   IconButton,
+  Link,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -22,7 +23,8 @@ export const NavBar = () => {
           justifyContent: "space-between",
         }}
       >
-        <Link href="/" passHref>
+        <NextLink href="/" passHref>
+          <Link underline="none" color='white'>
           <Container
             sx={{
               display: "flex",
@@ -33,7 +35,8 @@ export const NavBar = () => {
               Lali JIRA
             </Typography>
           </Container>
-        </Link>
+          </Link>
+        </NextLink>
         <IconButton onClick={openSideMenu}>
           <MenuRoundedIcon
             style={{ margin: "0px 10px" }}
