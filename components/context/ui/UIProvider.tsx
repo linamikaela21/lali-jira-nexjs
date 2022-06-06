@@ -1,5 +1,6 @@
 import { FC, useReducer } from "react";
-import { UIContext, uiReducer } from ".";
+import { UIContext } from ".";
+import { uiReducer } from "./uiReducer";
 
 export interface UIState {
   sidemenuOpen: boolean;
@@ -13,7 +14,7 @@ const UI_INITIAL_STATE: UIState = {
   dragging: false,
 };
 
-const UIProvider: FC = ({ children }: any) => {
+export const UIProvider: FC = ({ children }: any) => {
   const [state, dispatch] = useReducer(uiReducer, UI_INITIAL_STATE);
 
   const openSideMenu = () => {
@@ -47,5 +48,3 @@ const UIProvider: FC = ({ children }: any) => {
     </UIContext.Provider>
   );
 };
-
-export default UIProvider;
