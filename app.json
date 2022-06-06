@@ -1,6 +1,5 @@
 {
   "name": "Next.js",
-  "description": "Universal web app built on React.js, server-rendered with Node.js",
   "scripts": {
   },
   "env": {
