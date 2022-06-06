@@ -1,11 +1,10 @@
-import { FC, useReducer, useEffect, ReactElement } from "react";
+import { FC, useReducer, useEffect } from "react";
+import { useRouter } from "next/router";
 import { EntriesContext } from ".";
 import { entriesReducer } from ".";
 import { useSnackbar } from "notistack";
 import { entriesApi } from "../../../apis";
 import { Entry } from "../../../interfaces";
-import { redirect } from "next/dist/server/api-utils";
-import { useRouter } from "next/router";
 
 export interface EntriesState {
   entries: Entry[];

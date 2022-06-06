@@ -11,13 +11,11 @@ import {
   FormControlLabel,
   FormLabel,
   Grid,
-  IconButton,
   Radio,
   RadioGroup,
   TextField,
 } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
-import DeleteRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 import { Layout } from "../../components/layout";
 import { EntryStatus, Entry } from "../../interfaces/entry";
 import { getEntryById } from "../../database";
