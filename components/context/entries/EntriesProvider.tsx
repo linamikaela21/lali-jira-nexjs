@@ -1,4 +1,4 @@
-import { FC, useReducer, useEffect } from "react";
+import { FC, useReducer, useEffect, ReactElement } from "react";
 import { EntriesContext } from ".";
 import { entriesReducer } from ".";
 import { useSnackbar } from "notistack";
@@ -13,7 +13,7 @@ const ENTRIES_INITIAL_STATE: EntriesState = {
   entries: [],
 };
 
-export const EntriesProvider: FC = ({ children }: any) => {
+export const EntriesProvider: FC<EntriesState> = ({ children }: any) => {
   const [state, dispatch] = useReducer(entriesReducer, ENTRIES_INITIAL_STATE);
   const { enqueueSnackbar } = useSnackbar();
 

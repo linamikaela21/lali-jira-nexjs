@@ -34,7 +34,7 @@ const EntryPage: FC<Props> = ({ entry }) => {
   const { updateEntry } = useContext(EntriesContext);
   const [inputValue, setInputValue] = useState(entry.description);
   const [touched, setTouched] = useState(false);
-  const [status, setStatus] = useState<EntryStatus>(entry.status);
+  const [status, setStatus] = useState<EntryStatus>(entry.status)
 
   const isNotValid = useMemo(
     () => inputValue.length <= 0 && touched,

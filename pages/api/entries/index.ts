@@ -22,10 +22,12 @@ export default function handler(
 
 const getEntries = async (res: NextApiResponse<HandlerData>) => {
   await db.connect();
-  const entries = await EntryModel.find().sort({ createdAt: "ascending" });
+  const entry: any & IEntry & { _id: string } = await EntryModel.find().sort({
+    createdAt: "ascending",
+  });
   await db.disconnect();
 
-  res.status(200).json(entries);
+  res.status(200).json(entry);
 };
 
 const postEntry = async (
@@ -34,21 +36,19 @@ const postEntry = async (
 ) => {
   const { description = "" } = req.body;
 
-  const newEntry = new EntryModel({
+  const entry: any & IEntry & { _id: string } = new EntryModel({
     description,
     createdAt: Date.now(),
   });
 
   try {
     await db.connect();
-    await newEntry.save();
+    await entry.save();
     await db.disconnect();
 
-    return res.status(201).json(newEntry);
+    return res.status(201).json(entry);
   } catch (error: any) {
     await db.disconnect();
-    return res
-      .status(500)
-      .json({ message: error.errors.status.message });
+    return res.status(500).json({ message: error.errors.status.message });
   }
 };
