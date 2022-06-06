@@ -4,6 +4,8 @@ import { entriesReducer } from ".";
 import { useSnackbar } from "notistack";
 import { entriesApi } from "../../../apis";
 import { Entry } from "../../../interfaces";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 export interface EntriesState {
   entries: Entry[];
@@ -14,6 +16,7 @@ const ENTRIES_INITIAL_STATE: EntriesState = {
 };
 
 export const EntriesProvider: FC<EntriesState> = ({ children }: any) => {
+  const router = useRouter()
   const [state, dispatch] = useReducer(entriesReducer, ENTRIES_INITIAL_STATE);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -42,6 +45,7 @@ export const EntriesProvider: FC<EntriesState> = ({ children }: any) => {
           horizontal: "right",
         },
       });
+      router.push('/')
     }
   };
 

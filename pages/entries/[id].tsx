@@ -109,16 +109,6 @@ const EntryPage: FC<Props> = ({ entry }) => {
           </Card>
         </Grid>
       </Grid>
-      <IconButton
-        sx={{
-          position: "fixed",
-          bottom: 30,
-          right: 30,
-          backgroundColor: "error.dark",
-        }}
-      >
-        <DeleteRoundedIcon />
-      </IconButton>
     </Layout>
   );
 };
