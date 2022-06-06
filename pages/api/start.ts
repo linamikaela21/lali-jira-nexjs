@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiResponse } from "next";
 import { db, initialEntriesData } from "../../database";
 import { EntryModel } from "../../models";
 

@@ -11,17 +11,17 @@ interface DataInitialEntry {
 export const initialEntriesData: EntryInitialData = {
   entries: [
     {
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description: "Description of pending task",
       status: "pending",
       createdAt: Date.now(),
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description: "Description of in-process task",
       status: "in-process",
       createdAt: Date.now() - 1000000,
     },
     {
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+      description: "Description of completed task",
       status: "completed",
       createdAt: Date.now() - 100000,
     },
